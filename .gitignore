@@ -68,4 +68,5 @@ coverage/
 # Diğer
 *.dbmdl
 *.bak
-*.m*
+*.pdf
+proje_notlari.txt
