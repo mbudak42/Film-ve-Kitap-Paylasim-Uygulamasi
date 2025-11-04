@@ -225,28 +225,6 @@
             color: #8C583A;
             text-decoration: none;
         }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .left-panel {
-                padding: 40px 30px;
-            }
-
-            .left-panel h1 {
-                font-size: 2em;
-            }
-
-            .right-panel {
-                padding: 40px 30px;
-            }
-
-            .form-title {
-                font-size: 1.7em;
-            }
-        }
     </style>
 </head>
 <body>
@@ -336,23 +314,7 @@
             }
         }
 
-        function validateEmail() {
-            const value = email.value.trim();
-            const error = document.getElementById('emailError');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (!emailRegex.test(value)) {
-                email.classList.add('error');
-                email.classList.remove('success');
-                error.classList.add('show');
-                return false;
-            } else {
-                email.classList.remove('error');
-                email.classList.add('success');
-                error.classList.remove('show');
-                return true;
-            }
-        }
+        
 
         function validatePassword() {
             const value = password.value;
