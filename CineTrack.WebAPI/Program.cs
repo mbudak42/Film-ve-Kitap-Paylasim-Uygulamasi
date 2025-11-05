@@ -1,3 +1,6 @@
+using CineTrack.DataAccess;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,10 +9,13 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
+builder.Services.AddDbContext<CineTrackDbContext>(options =>
+	options.UseSqlServer(builder.Configuration.GetConnectionString("CineTrackDb")));
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+	app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();
